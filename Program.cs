@@ -11,7 +11,10 @@
 
 
             // skapa relevanta variabler:
-            // int spelare, int valet, bool endTheGame etc.
+            // int spelaren = 1;
+            // int valet;
+            // bool endTheGame;
+            // etc.
             // char[] rutan för att förvara värdena från spelets rutor (rutor #1 till #9, exkluderad 0)
 
 
