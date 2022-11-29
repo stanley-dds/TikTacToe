@@ -118,7 +118,7 @@ namespace TikTacToe
                 if ((command == "S") || (command == "s"))
                 {
                     gameHadStarted = false;
-                    ticTacToeValue[0] = '0'; // sätt nollan som ursprungliga värden 
+                    ticTacToeValue[0] = '0'; // annulerar spelet.
                     //PrintMenu(gameHadStarted);
                     
                 }
