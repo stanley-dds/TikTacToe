@@ -8,8 +8,9 @@ namespace TikTacToe
     internal class Program
     {
         static int player = 1;
-        
-        private static string PrintMenu(bool gameHadStarted) // metod för att skriva ut menyval så att spelaren lättare kan navigera i spelet
+
+        // metoden för att skriva ut menyval så att spelaren lättare kan navigera i spelet
+        private static string PrintMenu(bool gameHadStarted) 
         {
             string command;
 
@@ -48,9 +49,10 @@ namespace TikTacToe
         }
         return command.Trim();
         }
-         
-        
-        private static void Board(char[] ticTacToeValues) // metod för spelbräde array är bara tillfälligt namn.
+
+
+        // metod för spelbräde array är bara tillfälligt namn.
+        private static void Board(char[] ticTacToeValues) 
         {
             Console.Clear();
             Console.WriteLine($"  {ticTacToeValues[1]}  |  {ticTacToeValues[2]}  |  {ticTacToeValues[3]}  ");
@@ -59,6 +61,9 @@ namespace TikTacToe
             Console.WriteLine($"_____|_____|_____");
             Console.WriteLine($"  {ticTacToeValues[7]}  |  {ticTacToeValues[8]}  |  {ticTacToeValues[9]}  ");
         }
+
+
+        //metoden fyller på spelbordet med charVärdena från 1 till 9
         static char[] setTicTacToeValues()
          {
             char[] ticTacToeValues = new char[10];
@@ -71,7 +76,10 @@ namespace TikTacToe
             ticTacToeValues[0] = '$'; 
 
             return ticTacToeValues;            
-         } //metoden fyller på spelbordet med charVärdena från 1 till 9
+         }
+
+
+        // metoden kontroller om input är en siffra mellan 1 och 9
         static bool correctInput(string command)
         {
             bool correctInput = false;
@@ -82,8 +90,11 @@ namespace TikTacToe
             }
             catch(FormatException) {}
             return correctInput;
-        } // kontroller om input är en siffra mellan 1 och 9
-        static bool checkIfTheGameHadStarted(char[] ticTacToeValues) // metoden kontroller om spelet är påbörjad.
+        }
+
+
+        // metoden kontroller om spelet är påbörjad.
+        static bool checkIfTheGameHadStarted(char[] ticTacToeValues) 
         {
             if (ticTacToeValues[0] == '$') return true;
             else return false;
