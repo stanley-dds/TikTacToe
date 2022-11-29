@@ -46,8 +46,8 @@ namespace TikTacToe
                 {
                     Console.WriteLine("Spelare 1: Välj en siffra 1 till 9.");
                 }
-        }
-        return command.Trim();
+            } 
+            return command.Trim();
         }
 
 
