@@ -103,7 +103,7 @@ namespace TikTacToe
         
         static void Main(string[] args)
         {
-            bool gameHadStarted = false;
+            bool gameHadStarted;
             char[] ticTacToeValue = new char[10];
 
             Console.WriteLine("Välkommen till luffarshack!\n");
@@ -117,10 +117,7 @@ namespace TikTacToe
 
                 if ((command == "S") || (command == "s"))
                 {
-                    gameHadStarted = false;
-                    ticTacToeValue[0] = '0'; // annulerar spelet.
-                    //PrintMenu(gameHadStarted);
-                    
+                    ticTacToeValue[0] = '0'; // annulerar spelet.                    
                 }
                 else if ((command == "N") || (command == "n"))
                 {
