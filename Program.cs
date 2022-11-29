@@ -34,9 +34,9 @@
         private static void Board() // metod för spelbräde array är bara tillfälligt namn.
         {
             Console.WriteLine($"  {array[1]}  |  {array[2]}  |  {array[3]}  ");
-            Console.WriteLine($"_____|_____|_____|");
+            Console.WriteLine($"_____|_____|_____");
             Console.WriteLine($"  {array[4]}  |  {array[5]}  |  {array[6]}  ");
-            Console.WriteLine($"_____|_____|_____|");
+            Console.WriteLine($"_____|_____|_____");
             Console.WriteLine($"  {array[7]}  |  {array[8]}  |  {array[9]}  ");
         }
         static void Main(string[] args)
