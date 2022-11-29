@@ -6,6 +6,30 @@
         // int spelaren = 1;
         static int player = 1;
         
+         private static string PrintMenu() // metod för att skriva ut menyval så att spelaren lättare kan navigera i spelet
+        {
+            string command;
+            do
+            {
+                command = Console.ReadLine();
+                if (command == "meny")
+                {
+                    Console.WriteLine("Lista över alla menyval: ");
+                    Console.WriteLine("Tryck på 'S' för att sluta spelet");
+                    Console.WriteLine("Tryck på 'N' för att starta ett nytt spel");
+                }
+                else if (command == "S")
+                {
+                    Console.WriteLine("Hej då och hoppas vi ses igen!");
+                }
+                else if (command == "N")
+                {
+                    Console.Clear();
+                }
+            }
+            while (command != "S");
+            return command;
+        }
         
         private static void Board() // metod för spelbräde array är bara tillfälligt namn.
         {
@@ -33,8 +57,12 @@
 
             // Sprint backlogg #1, spelaren1 alltid kör med X, spelaren2 - med O
             
+            string command;
             Console.Clear();// När ett nytt spel börjar så rensas konsolen.
             Console.WriteLine("Välommen till luffarshack!\n");
+            Console.WriteLine("För att se tillgängliga menyval, skriv in 'meny'.");
+            Console.WriteLine();
+            PrintMenu();
             Console.WriteLine("Spelare 1 är X och Spelare 2 är O");
             Console.WriteLine("\n");
 
