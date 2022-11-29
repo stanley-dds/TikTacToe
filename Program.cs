@@ -2,6 +2,12 @@
 {
     internal class Program
     {
+        
+        // int spelaren = 1;
+        static int player = 1;
+        
+        
+        
         static void Main(string[] args)
         {
             // Ett simpelt TicTacToe spel presenteras här. Två spelare finns det.
