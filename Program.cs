@@ -94,6 +94,24 @@
             // Console.WriteLine($"ERROR! Rutan #{rutan[position]} upptagen. Välj en annan rutan!"); 
             // }
             
+            //private bool checkWinner(int player)
+            //   {
+                // Rader
+            //  if (array[0, 0] == player && array[0, 1] == player && array[0, 2] == player) { return true; }
+            //  if (array[1, 0] == player && array[1, 1] == player && array[1, 2] == player) { return true; }
+            //  if (array[2, 0] == player && array[2, 1] == player && array[2, 2] == player) { return true; }
+
+                // Kolumner
+            //  if (array[0, 0] == player && array[1, 0] == player && array[2, 0] == player) { return true; }
+            //  if (array[0, 1] == player && array[1, 1] == player && array[2, 1] == player) { return true; }
+            //  if (array[0, 2] == player && array[1, 2] == player && array[2, 2] == player) { return true; }
+
+                // Diagonalt
+            //  if (array[0, 0] == player && array[1, 1] == player && array[2, 2] == player) { return true; }
+            //  if (array[0, 2] == player && array[1, 1] == player && array[2, 0] == player) { return true; }
+
+            //  return false;
+            //    }
 
 
 
