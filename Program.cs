@@ -25,7 +25,22 @@
 
 
             // Sprint backlogg #1, spelaren1 alltid kör med X, spelaren2 - med O
+            
+            Console.Clear();// När ett nytt spel börjar så rensas konsolen.
+            Console.WriteLine("Välommen till luffarshack!\n");
+            Console.WriteLine("Spelare 1 är X och Spelare 2 är O");
+            Console.WriteLine("\n");
 
+            if (player % 2 == 0)// Om spelaren är jämn så är det spelare 2 som spelar.
+            {
+                Console.WriteLine("Spelare 2: Välj en siffra 1 till 9.");
+            }
+            else
+            {
+                Console.WriteLine("Spelare 1: Välj en siffra 1 till 9.");
+            }
+            
+            
             // Sprint backlogg #2 TBD 
 
             // #3 TBD ...
