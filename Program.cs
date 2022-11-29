@@ -118,8 +118,8 @@ namespace TikTacToe
                 if ((command == "S") || (command == "s"))
                 {
                     gameHadStarted = false;
-                    ticTacToeValue[0] = '0';
-                    PrintMenu(gameHadStarted);
+                    ticTacToeValue[0] = '0'; // sätt nollan som ursprungliga värden 
+                    //PrintMenu(gameHadStarted);
                     
                 }
                 else if ((command == "N") || (command == "n"))
@@ -153,9 +153,13 @@ namespace TikTacToe
                         {
                             if (command != "meny") Console.WriteLine("ERROR! För att kunna spela," +
                                 " ge mig ett värde 1 till 9, annars skriv meny :)");
-                        } 
+                        }
                     }
-                    else Console.WriteLine("ERROR! Starta först spelet med n kommando");
+                    else
+                    {
+                        if (command != "meny") Console.WriteLine("ERROR! Starta först spelet med n kommando");
+                    }
+                        
 
                 }
 
