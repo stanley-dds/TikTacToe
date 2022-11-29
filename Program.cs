@@ -72,7 +72,7 @@ namespace TikTacToe
                 ticTacToeValues[i] =  (char)(i + '0');      
             }
 
-            // $char innebär att spelet hade påbörjats. Är det '0' char istället, spelet ej påbörjades!
+            // $char innebär att spelet hade påbörjats.
             ticTacToeValues[0] = '$'; 
 
             return ticTacToeValues;            
