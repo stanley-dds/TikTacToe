@@ -159,17 +159,17 @@ namespace TikTacToe
         }
             private static int CheckWinner()
             {
-                // Rader
+                // Rows
                 if (ticTacToeValue[1] == ticTacToeValue[2] && ticTacToeValue[2] == ticTacToeValue[3]) { return 1; }
                 if (ticTacToeValue[4] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[6]) { return 1; }
                 if (ticTacToeValue[7] == ticTacToeValue[8] && ticTacToeValue[8] == ticTacToeValue[9]) { return 1; }
 
-                // Kolumner
+                // Columns
                 if (ticTacToeValue[1] == ticTacToeValue[4] && ticTacToeValue[4] == ticTacToeValue[7]) { return 1; }
                 if (ticTacToeValue[2] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[8]) { return 1; }
                 if (ticTacToeValue[3] == ticTacToeValue[6] && ticTacToeValue[6] == ticTacToeValue[9]) { return 1; }
 
-                // Diagonalt
+                // Diagonals
                 if (ticTacToeValue[1] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[9]) { return 1; }
                 if (ticTacToeValue[3] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[7]) { return 1; }
 
