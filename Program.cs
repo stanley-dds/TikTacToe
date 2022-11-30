@@ -101,12 +101,10 @@ namespace TikTacToe
             else return false;
         }
         
-        
+        static char[] ticTacToeValue = new char[10];
         static void Main(string[] args)
         {
             bool gameHadStarted;
-            char[] ticTacToeValue = new char[10];
-
             Console.WriteLine("Välkommen till luffarshack!\n");
             Console.WriteLine("Spelare 1 är X och Spelare 2 är O");
             Console.WriteLine("För att se tillgängliga menyval, skriv in 'meny'.");
