@@ -8,6 +8,7 @@ namespace TikTacToe
     internal class Program
     {
         static int player = 1;
+        static int state = 0;
 
         // The method of printing out menu choices so that the player can more easily navigate the game
         private static string PrintMenu(bool gameHadStarted) 
@@ -156,32 +157,42 @@ namespace TikTacToe
                     {
                         if (command != "meny") Console.WriteLine("ERROR! Starta först spelet med n kommando");
                     }
-                        
-
+                   state = checkWinner();
                 }
+            } while (state != 1 && state != -1);
 
-            } while (true);
-
-
-            int checkWinner()
+            if (state == 1)
             {
-                // Rows
-                  if (ticTacToeValue[1] == player && ticTacToeValue[2] == player && ticTacToeValue[3] == player) { return 1; }
-                  if (ticTacToeValue[4] == player && ticTacToeValue[5] == player && ticTacToeValue[6] == player) { return 1; }
-                  if (ticTacToeValue[7] == player && ticTacToeValue[8] == player && ticTacToeValue[9] == player) { return 1; }
+                Console.WriteLine("Spelare {0} har vunnit", (player % 2) + 1);
+            }
+            else
+            {
+                Console.WriteLine("Oavgjort!");
+            }
+            Console.ReadLine();
+        }
+            private static int checkWinner()
+            {
+                // Rader
+                if (ticTacToeValue[1] == ticTacToeValue[2] && ticTacToeValue[2] == ticTacToeValue[3]) { return 1; }
+                if (ticTacToeValue[4] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[6]) { return 1; }
+                if (ticTacToeValue[7] == ticTacToeValue[8] && ticTacToeValue[8] == ticTacToeValue[9]) { return 1; }
 
-                // Columns
-                  if (ticTacToeValue[1] == player && ticTacToeValue[4] == player && ticTacToeValue[7] == player) { return 1; }
-                  if (ticTacToeValue[2] == player && ticTacToeValue[5] == player && ticTacToeValue[8] == player) { return 1; }
-                  if (ticTacToeValue[3] == player && ticTacToeValue[6] == player && ticTacToeValue[9] == player) { return 1; }
+                // Kolumner
+                if (ticTacToeValue[1] == ticTacToeValue[4] && ticTacToeValue[4] == ticTacToeValue[7]) { return 1; }
+                if (ticTacToeValue[2] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[8]) { return 1; }
+                if (ticTacToeValue[3] == ticTacToeValue[6] && ticTacToeValue[6] == ticTacToeValue[9]) { return 1; }
 
-                // Diagonally
-                  if (ticTacToeValue[1] == player && ticTacToeValue[5] == player && ticTacToeValue[9] == player) { return 1; }
-                  if (ticTacToeValue[3] == player && ticTacToeValue[5] == player && ticTacToeValue[7] == player) { return 1; }
-                
+                // Diagonalt
+                if (ticTacToeValue[1] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[9]) { return 1; }
+                if (ticTacToeValue[3] == ticTacToeValue[5] && ticTacToeValue[5] == ticTacToeValue[7]) { return 1; }
 
+
+                if (ticTacToeValue[1] != '1' && ticTacToeValue[2] != '2' && ticTacToeValue[3] != '3' && ticTacToeValue[4] != '4' && ticTacToeValue[5] != '5' && ticTacToeValue[6] != '6' && ticTacToeValue[7] != '7' && ticTacToeValue[8] != '8' && ticTacToeValue[9] != '9') { return -1; }
+        
+                else
+                {
                 return 0;
-                if (ticTacToeValue[1] != '1' && ticTacToeValue[2] != '2' && ticTacToeValue[3] != '3' && ticTacToeValue[4] != '4' && ticTacToeValue[5] != '5' && ticTacToeValue[6] != '6' && ticTacToeValue[7] != '7' && ticTacToeValue[8] != '8' && ticTacToeValue[9] != '9') { return 0; };
             }
         }
     }
