@@ -163,25 +163,26 @@ namespace TikTacToe
             } while (true);
 
 
-            static bool checkWinner(int player)
-             {
-                return true;
+            int checkWinner()
+            {
                 // Rader
-            //  if (array[0, 0] == player && array[0, 1] == player && array[0, 2] == player) { return true; }
-            //  if (array[1, 0] == player && array[1, 1] == player && array[1, 2] == player) { return true; }
-            //  if (array[2, 0] == player && array[2, 1] == player && array[2, 2] == player) { return true; }
+                  if (ticTacToeValue[1] == player && ticTacToeValue[2] == player && ticTacToeValue[3] == player) { return 1; }
+                  if (ticTacToeValue[4] == player && ticTacToeValue[5] == player && ticTacToeValue[6] == player) { return 1; }
+                  if (ticTacToeValue[7] == player && ticTacToeValue[8] == player && ticTacToeValue[9] == player) { return 1; }
 
                 // Kolumner
-            //  if (array[0, 0] == player && array[1, 0] == player && array[2, 0] == player) { return true; }
-            //  if (array[0, 1] == player && array[1, 1] == player && array[2, 1] == player) { return true; }
-            //  if (array[0, 2] == player && array[1, 2] == player && array[2, 2] == player) { return true; }
+                  if (ticTacToeValue[1] == player && ticTacToeValue[4] == player && ticTacToeValue[7] == player) { return 1; }
+                  if (ticTacToeValue[2] == player && ticTacToeValue[5] == player && ticTacToeValue[8] == player) { return 1; }
+                  if (ticTacToeValue[3] == player && ticTacToeValue[6] == player && ticTacToeValue[9] == player) { return 1; }
 
                 // Diagonalt
-            //  if (array[0, 0] == player && array[1, 1] == player && array[2, 2] == player) { return true; }
-            //  if (array[0, 2] == player && array[1, 1] == player && array[2, 0] == player) { return true; }
+                  if (ticTacToeValue[1] == player && ticTacToeValue[5] == player && ticTacToeValue[9] == player) { return 1; }
+                  if (ticTacToeValue[3] == player && ticTacToeValue[5] == player && ticTacToeValue[7] == player) { return 1; }
+                
 
-            //  return false;
-             }
+                return 0;
+                if (ticTacToeValue[1] != '1' && ticTacToeValue[2] != '2' && ticTacToeValue[3] != '3' && ticTacToeValue[4] != '4' && ticTacToeValue[5] != '5' && ticTacToeValue[6] != '6' && ticTacToeValue[7] != '7' && ticTacToeValue[8] != '8' && ticTacToeValue[9] != '9') { return 0; };
+            }
         }
     }
 }
