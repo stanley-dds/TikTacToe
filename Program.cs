@@ -65,7 +65,7 @@ namespace TikTacToe
 
 
         //Method populates the game board with the char values from 1 to 9
-        static char[] setTicTacToeValues()
+        static char[] SetTicTacToeValues()
          {
             char[] ticTacToeValues = new char[10];
             for (int i = 0; i < ticTacToeValues.Length; i++)
@@ -81,7 +81,7 @@ namespace TikTacToe
 
 
         // Method checks if the input is a number between 1 and 9
-        static bool correctInput(string command)
+        static bool CorrectInput(string command)
         {
             bool correctInput = false;
             try
@@ -95,7 +95,7 @@ namespace TikTacToe
 
 
         // Method checks if the game has started.
-        static bool checkIfTheGameHadStarted(char[] ticTacToeValues) 
+        static bool CheckIfTheGameHadStarted(char[] ticTacToeValues) 
         {
             if (ticTacToeValues[0] == '$') return true;
             else return false;
@@ -111,7 +111,7 @@ namespace TikTacToe
 
             do
             {
-                gameHadStarted = checkIfTheGameHadStarted(ticTacToeValue);
+                gameHadStarted = CheckIfTheGameHadStarted(ticTacToeValue);
                 string command = PrintMenu(gameHadStarted);
 
                 if ((command == "S") || (command == "s"))
@@ -120,15 +120,15 @@ namespace TikTacToe
                 }
                 else if ((command == "N") || (command == "n"))
                 {
-                    ticTacToeValue = setTicTacToeValues();
+                    ticTacToeValue = SetTicTacToeValues();
                     Board(ticTacToeValue); // Displays the game board
 
                 }
                 else
                 {
-                    if (checkIfTheGameHadStarted(ticTacToeValue))
+                    if (CheckIfTheGameHadStarted(ticTacToeValue))
                     {
-                        if (correctInput(command))
+                        if (CorrectInput(command))
                         {
                             int position = Int32.Parse(command);
                             if ((ticTacToeValue[position] != 'X') && (ticTacToeValue[position] != 'O'))
@@ -144,6 +144,7 @@ namespace TikTacToe
                             }
                             else Console.WriteLine($"ERROR! Rutan {position} var redan använd!\n" +
                                 $"Välj en annan ruta");
+                            state = CheckWinner();
                         }
                         else
                         {
@@ -155,7 +156,6 @@ namespace TikTacToe
                     {
                         if (command != "meny") Console.WriteLine("ERROR! Starta först spelet med n kommando");
                     }
-                   state = checkWinner();
                 }
             } while (state != 1 && state != -1);
 
@@ -169,7 +169,7 @@ namespace TikTacToe
             }
             Console.ReadLine();
         }
-            private static int checkWinner()
+            private static int CheckWinner()
             {
                 // Rader
                 if (ticTacToeValue[1] == ticTacToeValue[2] && ticTacToeValue[2] == ticTacToeValue[3]) { return 1; }
