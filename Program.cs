@@ -36,18 +36,6 @@ namespace TikTacToe
             {
                 Console.WriteLine("Spelet avslutas! Skriv meny");
             }
-            else if ((command == "N") || (command == "n"))
-            {
-                Console.Clear();
-                if (player % 2 == 0)// If "player" is even, it is player 2's turn.
-                {
-                    Console.WriteLine("Spelare 2: Välj en siffra 1 till 9.");
-                }
-                else
-                {
-                    Console.WriteLine("Spelare 1: Välj en siffra 1 till 9.");
-                }
-            } 
             return command.Trim();
         }
 
