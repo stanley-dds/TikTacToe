@@ -1,7 +1,7 @@
-﻿// Ett simpelt TicTacToe spel presenteras här. Två spelare finns det.
-// Som input skriver användare siffra 1 till 9.
+﻿// A simple TicTacToe game is presented here. There are two players
+// As input, users write numbers 1 to 9.
 
-// Spelaren vinner så fort hen fått tre kryss/nollor på rad/i kolumn alternativt på diagonalen.
+// The player wins as soon as he gets three crosses/zeros in a row/column or alternatively on the diagonal.
 
 namespace TikTacToe
 {
@@ -9,7 +9,7 @@ namespace TikTacToe
     {
         static int player = 1;
 
-        // metoden för att skriva ut menyval så att spelaren lättare kan navigera i spelet
+        // The method of printing out menu choices so that the player can more easily navigate the game
         private static string PrintMenu(bool gameHadStarted) 
         {
             string command;
@@ -38,7 +38,7 @@ namespace TikTacToe
             else if ((command == "N") || (command == "n"))
             {
                 Console.Clear();
-                if (player % 2 == 0)// Om spelaren är jämn så är det spelare 2 som spelar.
+                if (player % 2 == 0)// If "player" is even, it is player 2's turn.
                 {
                     Console.WriteLine("Spelare 2: Välj en siffra 1 till 9.");
                 }
@@ -51,7 +51,7 @@ namespace TikTacToe
         }
 
 
-        // metod för spelbräde array är bara tillfälligt namn.
+        // Method for the gameboard. Array is just temporary name.
         private static void Board(char[] ticTacToeValues) 
         {
             Console.Clear();
@@ -63,7 +63,7 @@ namespace TikTacToe
         }
 
 
-        //metoden fyller på spelbordet med charVärdena från 1 till 9
+        //Method populates the game board with the char values from 1 to 9
         static char[] setTicTacToeValues()
          {
             char[] ticTacToeValues = new char[10];
@@ -72,14 +72,14 @@ namespace TikTacToe
                 ticTacToeValues[i] =  (char)(i + '0');      
             }
 
-            // $char innebär att spelet hade påbörjats.
+            // $char means that the game had started.
             ticTacToeValues[0] = '$'; 
 
             return ticTacToeValues;            
          }
 
 
-        // metoden kontroller om input är en siffra mellan 1 och 9
+        // Method checks if the input is a number between 1 and 9
         static bool correctInput(string command)
         {
             bool correctInput = false;
@@ -93,7 +93,7 @@ namespace TikTacToe
         }
 
 
-        // metoden kontroller om spelet är påbörjad.
+        // Method checks if the game has started.
         static bool checkIfTheGameHadStarted(char[] ticTacToeValues) 
         {
             if (ticTacToeValues[0] == '$') return true;
@@ -117,12 +117,12 @@ namespace TikTacToe
 
                 if ((command == "S") || (command == "s"))
                 {
-                    ticTacToeValue[0] = '0'; // annulerar spelet.                    
+                    ticTacToeValue[0] = '0'; // Cancels the game.                   
                 }
                 else if ((command == "N") || (command == "n"))
                 {
                     ticTacToeValue = setTicTacToeValues();
-                    Board(ticTacToeValue); // visar spelbordet
+                    Board(ticTacToeValue); // Displays the game board
 
                 }
                 else
@@ -165,17 +165,17 @@ namespace TikTacToe
 
             int checkWinner()
             {
-                // Rader
+                // Rows
                   if (ticTacToeValue[1] == player && ticTacToeValue[2] == player && ticTacToeValue[3] == player) { return 1; }
                   if (ticTacToeValue[4] == player && ticTacToeValue[5] == player && ticTacToeValue[6] == player) { return 1; }
                   if (ticTacToeValue[7] == player && ticTacToeValue[8] == player && ticTacToeValue[9] == player) { return 1; }
 
-                // Kolumner
+                // Collumns
                   if (ticTacToeValue[1] == player && ticTacToeValue[4] == player && ticTacToeValue[7] == player) { return 1; }
                   if (ticTacToeValue[2] == player && ticTacToeValue[5] == player && ticTacToeValue[8] == player) { return 1; }
                   if (ticTacToeValue[3] == player && ticTacToeValue[6] == player && ticTacToeValue[9] == player) { return 1; }
 
-                // Diagonalt
+                // Diagonally
                   if (ticTacToeValue[1] == player && ticTacToeValue[5] == player && ticTacToeValue[9] == player) { return 1; }
                   if (ticTacToeValue[3] == player && ticTacToeValue[5] == player && ticTacToeValue[7] == player) { return 1; }
                 
