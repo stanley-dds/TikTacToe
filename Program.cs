@@ -40,7 +40,7 @@ namespace TikTacToe
         }
 
 
-        // Method for the gameboard. Array is just temporary name.
+        // Method for the gameboard.
         private static void Board(char[] ticTacToeValues) 
         {
             Console.Clear();
